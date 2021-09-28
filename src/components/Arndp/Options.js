@@ -44,15 +44,15 @@ const Lc = ({ criteria, setCriteria }) => (
 )
 
 const Numbers = ({ criteria, setCriteria }) => (
-  <div>
+  <label for="numbers">
     <input
       id="numbers"
       type="checkbox"
       checked={criteria.numbers}
       onChange={() => setCriteria({ ...criteria, numbers: !criteria.numbers })}
     />{" "}
-    <label for="numbers">Numbers (0-9)</label>
-  </div>
+    Numbers (0-9)
+  </label>
 )
 
 const Space = ({ criteria, setCriteria }) => (
