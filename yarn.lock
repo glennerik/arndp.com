@@ -1528,7 +1528,7 @@
     "@chakra-ui/checkbox" "1.5.7"
     "@chakra-ui/utils" "1.8.2"
 
-"@chakra-ui/system@>=1.0.0", "@chakra-ui/system@1.7.3":
+"@chakra-ui/system@^1.7.3", "@chakra-ui/system@>=1.0.0", "@chakra-ui/system@1.7.3":
   "integrity" "sha512-061lcraf4tNB4ixpnuWetZjr3fAEmj4zHfMznmMx6MAF6lHLJR9tsCF+Cuyj6m9JPwstbBPhyb5arNRXhZGvYQ=="
   "resolved" "https://registry.npmjs.org/@chakra-ui/system/-/system-1.7.3.tgz"
   "version" "1.7.3"
@@ -1731,7 +1731,7 @@
   "resolved" "https://registry.npmjs.org/@emotion/sheet/-/sheet-1.0.2.tgz"
   "version" "1.0.2"
 
-"@emotion/styled@^11.0.0":
+"@emotion/styled@^11.0.0", "@emotion/styled@^11.3.0":
   "integrity" "sha512-fUoLcN3BfMiLlRhJ8CuPUMEyKkLEoM+n+UyAbnqGEsCd5IzKQ7VQFLtzpJOaCD2/VR2+1hXQTnSZXVJeiTNltA=="
   "resolved" "https://registry.npmjs.org/@emotion/styled/-/styled-11.3.0.tgz"
   "version" "11.3.0"
