@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Flex, Box } from "@chakra-ui/react"
+import { Flex, Box, Button } from "@chakra-ui/react"
 
 export const Options = p => (
   <Flex
@@ -32,9 +32,12 @@ export const Options = p => (
 )
 
 const Regenerate = ({ criteria, setCriteria }) => (
-  <button onClick={() => setCriteria({ ...criteria, tlr: criteria.tlr + 1 })}>
+  <Button
+    colorScheme="purple"
+    onClick={() => setCriteria({ ...criteria, tlr: criteria.tlr + 1 })}
+  >
     Regenerate
-  </button>
+  </Button>
 )
 
 const Uc = ({ criteria, setCriteria }) => (
