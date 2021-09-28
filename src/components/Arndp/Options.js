@@ -1,6 +1,12 @@
 import * as React from "react"
-import { Flex, Box, Button } from "@chakra-ui/react"
+import { Flex, Box, Button, Text } from "@chakra-ui/react"
 import { RepeatIcon } from "@chakra-ui/icons"
+
+const Nw = ({ children }) => (
+  <Text as="span" whiteSpace="nowrap">
+    {children}
+  </Text>
+)
 
 export const Options = p => (
   <Flex
@@ -49,7 +55,7 @@ const Uc = ({ criteria, setCriteria }) => (
       checked={criteria.uc}
       onChange={() => setCriteria({ ...criteria, uc: !criteria.uc })}
     />{" "}
-    Uppercase (A-Z)
+    Uppercase <Nw>(A-Z)</Nw>
   </label>
 )
 
@@ -62,7 +68,7 @@ const Lc = ({ criteria, setCriteria }) => (
       checked={criteria.lc}
       onChange={() => setCriteria({ ...criteria, lc: !criteria.lc })}
     />{" "}
-    Lowercase (a-z)
+    Lowercase <Nw>(a-z)</Nw>
   </label>
 )
 
@@ -74,7 +80,7 @@ const Numbers = ({ criteria, setCriteria }) => (
       checked={criteria.numbers}
       onChange={() => setCriteria({ ...criteria, numbers: !criteria.numbers })}
     />{" "}
-    Numbers (0-9)
+    Numbers <Nw>(0-9)</Nw>
   </label>
 )
 
@@ -86,7 +92,7 @@ const Space = ({ criteria, setCriteria }) => (
       checked={criteria.space}
       onChange={() => setCriteria({ ...criteria, space: !criteria.space })}
     />{" "}
-    Space <span style={{ whiteSpace: "nowrap" }}>(" ")</span>
+    Space <Nw>(" ")</Nw>
   </label>
 )
 
@@ -98,7 +104,7 @@ const Symbols = ({ criteria, setCriteria }) => (
       checked={criteria.symbols}
       onChange={() => setCriteria({ ...criteria, symbols: !criteria.symbols })}
     />{" "}
-    Symbols <span style={{ whiteSpace: "nowrap" }}>(!#$%... etc)</span>
+    Symbols <Nw>(!#$%... etc)</Nw>
   </label>
 )
 
@@ -110,6 +116,6 @@ const NonAzChars = ({ criteria, setCriteria }) => (
       checked={criteria.non_az}
       onChange={() => setCriteria({ ...criteria, non_az: !criteria.non_az })}
     />{" "}
-    Non A-z Chars <span style={{ whiteSpace: "nowrap" }}>(üéâäà... etc)</span>
+    Non A-z Chars <Nw>(üéâäà... etc)</Nw>
   </label>
 )
