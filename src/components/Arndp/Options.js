@@ -1,15 +1,34 @@
 import * as React from "react"
+import { Flex, Box } from "@chakra-ui/react"
 
 export const Options = p => (
-  <div style={{ display: "flex", textAlign: "center", marginBottom: "2rem" }}>
-    <Uc {...p} />
-    <Lc {...p} />
-    <Numbers {...p} />
-    <Space {...p} />
-    <Symbols {...p} />
-    <NonAzChars {...p} />
-    <Regenerate {...p} />
-  </div>
+  <Flex
+    mb={4}
+    d={{ base: "block", md: "flex" }}
+    textAlign={{ base: "left", md: "center" }}
+  >
+    <Box>
+      <Uc {...p} />
+    </Box>
+    <Box>
+      <Lc {...p} />
+    </Box>
+    <Box>
+      <Numbers {...p} />
+    </Box>
+    <Box>
+      <Space {...p} />
+    </Box>
+    <Box>
+      <Symbols {...p} />
+    </Box>
+    <Box>
+      <NonAzChars {...p} />
+    </Box>
+    <Box>
+      <Regenerate {...p} />
+    </Box>
+  </Flex>
 )
 
 const Regenerate = ({ criteria, setCriteria }) => (
