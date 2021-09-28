@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Flex, Box, Button } from "@chakra-ui/react"
+import { RepeatIcon } from "@chakra-ui/icons"
 
 export const Options = p => (
   <Flex
@@ -36,7 +37,7 @@ const Regenerate = ({ criteria, setCriteria }) => (
     colorScheme="purple"
     onClick={() => setCriteria({ ...criteria, tlr: criteria.tlr + 1 })}
   >
-    Regenerate
+    <RepeatIcon />
   </Button>
 )
 

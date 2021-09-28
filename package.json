@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@chakra-ui/gatsby-plugin": "^2.0.1",
+    "@chakra-ui/icons": "^1.0.15",
     "gatsby": "^3.13.1",
     "gatsby-plugin-image": "^1.13.0",
     "gatsby-plugin-manifest": "^3.13.0",
