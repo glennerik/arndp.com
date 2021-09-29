@@ -1,21 +1,31 @@
 import * as React from "react"
-import { Flex, Box, Button, Text, Select } from "@chakra-ui/react"
+import {
+  Box,
+  Button,
+  Text,
+  Select,
+  Checkbox,
+  Kbd,
+  Flex,
+} from "@chakra-ui/react"
 import { RepeatIcon } from "@chakra-ui/icons"
-
-const Nw = ({ children }) => (
-  <Text as="span" whiteSpace="nowrap">
-    {children}
-  </Text>
-)
 
 export const Options = p => (
   <Flex
-    mb={4}
-    d={{ base: "block", md: "flex" }}
-    textAlign={{ base: "left", md: "center" }}
+    d={{ base: "block", lg: "flex" }}
+    textAlign={{ base: "none", lg: "center" }}
+    mb={8}
+    whiteSpace="nowrap"
+    justifyContent="space-between"
+    alignItems="center"
   >
-    <Box>
-      <Length {...p} />
+    <Box d="flex" alignItems="center">
+      <Box mr={4}>
+        <Regenerate {...p} />
+      </Box>
+      <Box>
+        <Length {...p} />
+      </Box>
     </Box>
     <Box>
       <Uc {...p} />
@@ -35,92 +45,82 @@ export const Options = p => (
     <Box>
       <NonAzChars {...p} />
     </Box>
-    <Box>
-      <Regenerate {...p} />
-    </Box>
   </Flex>
 )
 
-const Regenerate = ({ criteria, setCriteria }) => (
-  <Button
-    colorScheme="purple"
-    onClick={() => setCriteria({ ...criteria, tlr: criteria.tlr + 1 })}
-  >
-    <RepeatIcon />
-  </Button>
-)
-
 const Uc = ({ criteria, setCriteria }) => (
-  <label for="uc">
-    <input
-      id="uc"
-      type="checkbox"
-      checked={criteria.uc}
-      onChange={() => setCriteria({ ...criteria, uc: !criteria.uc })}
-    />{" "}
-    Uppercase <Nw>(A-Z)</Nw>
-  </label>
+  <Checkbox
+    isChecked={criteria.uc}
+    onChange={() => setCriteria({ ...criteria, uc: !criteria.uc })}
+    size="lg"
+  >
+    <Text as="span" d={{ base: "inline", lg: "none" }}>
+      Uppercase{" "}
+    </Text>
+    <Kbd>A-Z</Kbd>
+  </Checkbox>
 )
 
 const Lc = ({ criteria, setCriteria }) => (
-  <label for="lc">
-    {" "}
-    <input
-      id="lc"
-      type="checkbox"
-      checked={criteria.lc}
-      onChange={() => setCriteria({ ...criteria, lc: !criteria.lc })}
-    />{" "}
-    Lowercase <Nw>(a-z)</Nw>
-  </label>
+  <Checkbox
+    isChecked={criteria.lc}
+    onChange={() => setCriteria({ ...criteria, lc: !criteria.lc })}
+    size="lg"
+  >
+    <Text as="span" d={{ base: "inline", lg: "none" }}>
+      Lowercase{" "}
+    </Text>
+    <Kbd>a-z</Kbd>
+  </Checkbox>
 )
 
 const Numbers = ({ criteria, setCriteria }) => (
-  <label for="numbers">
-    <input
-      id="numbers"
-      type="checkbox"
-      checked={criteria.numbers}
-      onChange={() => setCriteria({ ...criteria, numbers: !criteria.numbers })}
-    />{" "}
-    Numbers <Nw>(0-9)</Nw>
-  </label>
+  <Checkbox
+    isChecked={criteria.numbers}
+    onChange={() => setCriteria({ ...criteria, numbers: !criteria.numbers })}
+    size="lg"
+  >
+    <Text as="span" d={{ base: "inline", lg: "none" }}>
+      Numbers{" "}
+    </Text>
+    <Kbd>0-9</Kbd>
+  </Checkbox>
 )
 
 const Space = ({ criteria, setCriteria }) => (
-  <label for="space">
-    <input
-      id="space"
-      type="checkbox"
-      checked={criteria.space}
-      onChange={() => setCriteria({ ...criteria, space: !criteria.space })}
-    />{" "}
-    Space <Nw>(" ")</Nw>
-  </label>
+  <Checkbox
+    isChecked={criteria.space}
+    onChange={() => setCriteria({ ...criteria, space: !criteria.space })}
+    size="lg"
+  >
+    Space <Kbd>&nbsp;</Kbd>
+  </Checkbox>
 )
 
 const Symbols = ({ criteria, setCriteria }) => (
-  <label for="symbols">
-    <input
-      id="symbols"
-      type="checkbox"
-      checked={criteria.symbols}
-      onChange={() => setCriteria({ ...criteria, symbols: !criteria.symbols })}
-    />{" "}
-    Symbols <Nw>(!#$%... etc)</Nw>
-  </label>
+  <Checkbox
+    isChecked={criteria.symbols}
+    onChange={() => setCriteria({ ...criteria, symbols: !criteria.symbols })}
+    size="lg"
+  >
+    <Text as="span" d={{ base: "inline", lg: "none" }}>
+      Symbols{" "}
+    </Text>
+    <Kbd>!#$%&hellip;</Kbd>
+  </Checkbox>
 )
 
 const NonAzChars = ({ criteria, setCriteria }) => (
-  <label for="non_az">
-    <input
-      id="non_az"
-      type="checkbox"
-      checked={criteria.non_az}
-      onChange={() => setCriteria({ ...criteria, non_az: !criteria.non_az })}
-    />{" "}
-    Non A-z Chars <Nw>(üéâäà... etc)</Nw>
-  </label>
+  <Checkbox
+    isChecked={criteria.non_az}
+    onChange={() => setCriteria({ ...criteria, non_az: !criteria.non_az })}
+    size="lg"
+  >
+    <Text as="span" d={{ base: "inline", lg: "none" }}>
+      Non A-z Chars{" "}
+    </Text>
+    <Kbd>üéâø&hellip;</Kbd>
+  </Checkbox>
 )
 
 const Length = ({ criteria, setCriteria }) => (
@@ -129,6 +129,7 @@ const Length = ({ criteria, setCriteria }) => (
     size="sm"
     onChange={e => setCriteria({ ...criteria, length: e.target.value })}
     minW={20}
+    maxW={20}
   >
     {[
       8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
@@ -139,4 +140,13 @@ const Length = ({ criteria, setCriteria }) => (
       </option>
     ))}
   </Select>
+)
+
+const Regenerate = ({ criteria, setCriteria }) => (
+  <Button
+    colorScheme="purple"
+    onClick={() => setCriteria({ ...criteria, tlr: criteria.tlr + 1 })}
+  >
+    <RepeatIcon />
+  </Button>
 )
