@@ -1,15 +1,11 @@
 import * as React from "react"
 import { Heading, Text } from "@chakra-ui/react"
-import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Arndp from "../components/Arndp"
 
 const IndexPage = () => (
   <Layout>
-    <Helmet>
-      <link rel="canonical" href="https://www.arndp.com/" />
-    </Helmet>
     <Seo title="A Random Password Generator" />
     <Heading as="h1" my={8}>
       A Random Password Generator

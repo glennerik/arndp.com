@@ -6,6 +6,12 @@ module.exports = {
     siteUrl: `https://www.arndp.com/`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.arndp.com`,
+      },
+    },
     `@chakra-ui/gatsby-plugin`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
