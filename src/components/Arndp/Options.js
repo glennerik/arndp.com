@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Flex, Box, Button, Text } from "@chakra-ui/react"
+import { Flex, Box, Button, Text, Select } from "@chakra-ui/react"
 import { RepeatIcon } from "@chakra-ui/icons"
 
 const Nw = ({ children }) => (
@@ -14,6 +14,9 @@ export const Options = p => (
     d={{ base: "block", md: "flex" }}
     textAlign={{ base: "left", md: "center" }}
   >
+    <Box>
+      <Length {...p} />
+    </Box>
     <Box>
       <Uc {...p} />
     </Box>
@@ -118,4 +121,22 @@ const NonAzChars = ({ criteria, setCriteria }) => (
     />{" "}
     Non A-z Chars <Nw>(üéâäà... etc)</Nw>
   </label>
+)
+
+const Length = ({ criteria, setCriteria }) => (
+  <Select
+    placeholder="Size"
+    size="sm"
+    onChange={e => setCriteria({ ...criteria, length: e.target.value })}
+    minW={20}
+  >
+    {[
+      8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+      27, 28, 29, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100,
+    ].map(length => (
+      <option key={length} value={length}>
+        {length}
+      </option>
+    ))}
+  </Select>
 )
