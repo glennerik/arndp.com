@@ -34,8 +34,7 @@ const defaultCriteria = {
   space: true,
   symbols: true,
   non_az: true,
-
   tlr: 0,
-  length: 20,
+  length: 24,
   numberOfPws: 5,
 }

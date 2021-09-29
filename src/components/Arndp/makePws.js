@@ -14,7 +14,8 @@ const generate_password = criteria => {
   seed.push(criteria.non_az ? non_az_letters : null)
   const useChars = seed.join("")
   const pw = []
-  Array.from({ length: criteria.length }).forEach(() => {
+  const { length } = criteria
+  Array.from({ length }).forEach(() => {
     const charPos = Math.floor(Math.random() * useChars.length)
     pw.push(useChars[charPos])
   })

@@ -11,9 +11,15 @@ const IndexPage = () => (
       <link rel="canonical" href="https://www.arndp.com/" />
     </Helmet>
     <Seo title="A Random Password Generator" />
-    <Heading as="h1">A Random Password Generator</Heading>
-    <Text as="p">Click on a password to copy it</Text>
+    <Heading as="h1" my={8}>
+      A Random Password Generator
+    </Heading>
     <Arndp />
+
+    <Text as="p" my={8}>
+      Click on a password to copy it
+    </Text>
+
     <Text as="p">
       All passwords are generated client side, aka. on your local device. They
       are not generated on our server, and they are not transferred over the
