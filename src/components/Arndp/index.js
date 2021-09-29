@@ -1,5 +1,6 @@
 import * as React from "react"
 import { useEffect, useState } from "react"
+import { Text } from "@chakra-ui/react"
 import { makePws } from "./makePws"
 import { ListPw } from "./ListPw"
 import { Options } from "./Options"
@@ -18,6 +19,12 @@ const Arndp = () => {
     <>
       <Options criteria={criteria} setCriteria={setCriteria} />
       <Passwords passwords={passwords} />
+      <Text as="p" my={4}>
+        These passwords were made{" "}
+        <i>
+          {new Date().toDateString()} @ {new Date().toLocaleTimeString()}
+        </i>
+      </Text>
     </>
   )
 }
