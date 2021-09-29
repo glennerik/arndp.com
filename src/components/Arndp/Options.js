@@ -7,6 +7,7 @@ import {
   Checkbox,
   Kbd,
   Flex,
+  Tooltip,
 } from "@chakra-ui/react"
 import { RepeatIcon } from "@chakra-ui/icons"
 
@@ -20,31 +21,47 @@ export const Options = p => (
     alignItems="center"
   >
     <Box d="flex" alignItems="center">
-      <Box mr={4}>
-        <Regenerate {...p} />
-      </Box>
+      <Tooltip label="Re-generate passwords" hasArrow>
+        <Box mr={4}>
+          <Regenerate {...p} />
+        </Box>
+      </Tooltip>
+      <Tooltip label="Set the password length" hasArrow>
+        <Box>
+          <Length {...p} />
+        </Box>
+      </Tooltip>
+    </Box>
+    <Tooltip label="Include UPPERCASE letters" hasArrow>
       <Box>
-        <Length {...p} />
+        <Uc {...p} />
       </Box>
-    </Box>
-    <Box>
-      <Uc {...p} />
-    </Box>
-    <Box>
-      <Lc {...p} />
-    </Box>
-    <Box>
-      <Numbers {...p} />
-    </Box>
-    <Box>
-      <Space {...p} />
-    </Box>
-    <Box>
-      <Symbols {...p} />
-    </Box>
-    <Box>
-      <NonAzChars {...p} />
-    </Box>
+    </Tooltip>
+    <Tooltip label="Include lowercase letters" hasArrow>
+      <Box>
+        <Lc {...p} />
+      </Box>
+    </Tooltip>
+    <Tooltip label="Include numbers" hasArrow>
+      <Box>
+        <Numbers {...p} />
+      </Box>
+    </Tooltip>
+    <Tooltip label="Include white-space in the password" hasArrow>
+      <Box>
+        <Space {...p} />
+      </Box>
+    </Tooltip>
+    <Tooltip label="Include symbols" hasArrow>
+      <Box>
+        <Symbols {...p} />
+      </Box>
+    </Tooltip>
+    <Tooltip label="Include non A-z characters" hasArrow>
+      <Box>
+        <NonAzChars {...p} />
+      </Box>
+    </Tooltip>
   </Flex>
 )
 
