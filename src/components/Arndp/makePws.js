@@ -2,7 +2,9 @@ const all_letters_LC = "abcdefghijklmnopqrstuvwxyz"
 const all_letters_UC = all_letters_LC.toUpperCase()
 const all_numbers = "0123456789"
 const symbols = "!\"#$%&'()*+,-./:;<>=?@[]\\^_{}|~×`"
-const non_az_letters = "üéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£ØƒáíóúñÑÓßÔÒõÕµþÞÚÛÙýÝ"
+// const non_az_letters = "üéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£ØƒáíóúñÑÓßÔÒõÕµþÞÚÛÙýÝ"
+const non_az_letters_UC = "ÄÅÉÆÖÜ£ØƒÑÓßÔÒÕÚÛÙÝ"
+const non_az_letters_LC = "üéâäàåçêëèïîìæôöòûùÿøáíóúñõµþÞý"
 
 const generate_password = criteria => {
   const seed = []
@@ -11,7 +13,19 @@ const generate_password = criteria => {
   seed.push(criteria.numbers ? all_numbers : null)
   seed.push(criteria.space ? "          " : null)
   seed.push(criteria.symbols ? symbols : null)
-  seed.push(criteria.non_az ? non_az_letters : null)
+  if (criteria.non_az) {
+    if (!criteria.lc && !criteria.uc) {
+      seed.push(non_az_letters_LC)
+      seed.push(non_az_letters_UC)
+    } else {
+      if (criteria.lc) {
+        seed.push(non_az_letters_LC)
+      }
+      if (criteria.uc) {
+        seed.push(non_az_letters_UC)
+      }
+    }
+  }
   const useChars = seed.join("")
   const pw = []
   const { length } = criteria
