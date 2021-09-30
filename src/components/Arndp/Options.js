@@ -18,12 +18,11 @@ export const Options = p => (
   <Flex
     d={{ base: "block", lg: "flex" }}
     textAlign={{ base: "none", lg: "center" }}
-    mb={8}
     whiteSpace="nowrap"
     justifyContent="space-between"
     alignItems="center"
   >
-    <Box d="flex" alignItems="center">
+    <Box d="flex" alignItems="center" my="2">
       <Tt label="Re-generate passwords" hasArrow>
         <Box mr={4}>
           <Regenerate {...p} />
@@ -36,32 +35,32 @@ export const Options = p => (
       </Tt>
     </Box>
     <Tt label="Include UPPERCASE letters" hasArrow>
-      <Box>
+      <Box my="2">
         <Uc {...p} />
       </Box>
     </Tt>
     <Tt label="Include lowercase letters" hasArrow>
-      <Box>
+      <Box my="2">
         <Lc {...p} />
       </Box>
     </Tt>
     <Tt label="Include numbers" hasArrow>
-      <Box>
+      <Box my="2">
         <Numbers {...p} />
       </Box>
     </Tt>
     <Tt label="Include white-space in the password" hasArrow>
-      <Box>
+      <Box my="2">
         <Space {...p} />
       </Box>
     </Tt>
     <Tt label="Include symbols" hasArrow>
-      <Box>
+      <Box my="2">
         <Symbols {...p} />
       </Box>
     </Tt>
     <Tt label="Include non A-z characters" hasArrow>
-      <Box>
+      <Box my="2">
         <NonAzChars {...p} />
       </Box>
     </Tt>

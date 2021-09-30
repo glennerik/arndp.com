@@ -20,10 +20,10 @@ const Arndp = () => {
       <Options criteria={criteria} setCriteria={setCriteria} />
       <Passwords passwords={passwords} />
       <Text as="p" my={4}>
-        These passwords were made{" "}
-        <i>
+        These passwords were generated{" "}
+        <Text as="i" d="inline-block">
           {new Date().toDateString()} @ {new Date().toLocaleTimeString()}
-        </i>
+        </Text>
       </Text>
     </>
   )

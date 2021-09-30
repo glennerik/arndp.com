@@ -7,9 +7,7 @@ import Arndp from "../components/Arndp"
 const IndexPage = () => (
   <Layout>
     <Seo title="A Random Password Generator" />
-    <Heading as="h1" my={8}>
-      A Random Password Generator
-    </Heading>
+    <Heading as="h1">A Random Password Generator</Heading>
     <Arndp />
 
     <Text as="p" my={8}>
