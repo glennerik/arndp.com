@@ -32,7 +32,9 @@ const Arndp = () => {
 export default Arndp
 
 const Passwords = ({ passwords }) =>
-  passwords.map(password => <ListPw password={password} key={password} />)
+  passwords
+    .filter(pw => (pw ? pw : null))
+    .map((pw, tlr) => <ListPw password={pw} key={tlr} />)
 
 const defaultCriteria = {
   uc: true,
