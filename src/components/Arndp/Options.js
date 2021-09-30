@@ -72,6 +72,7 @@ const Uc = ({ criteria, setCriteria }) => (
     isChecked={criteria.uc}
     onChange={() => setCriteria({ ...criteria, uc: !criteria.uc })}
     size="lg"
+    colorScheme="purple"
   >
     <Flex alignItems="center">
       <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
@@ -87,6 +88,7 @@ const Lc = ({ criteria, setCriteria }) => (
     isChecked={criteria.lc}
     onChange={() => setCriteria({ ...criteria, lc: !criteria.lc })}
     size="lg"
+    colorScheme="purple"
   >
     <Flex alignItems="center">
       <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
@@ -102,6 +104,7 @@ const Numbers = ({ criteria, setCriteria }) => (
     isChecked={criteria.numbers}
     onChange={() => setCriteria({ ...criteria, numbers: !criteria.numbers })}
     size="lg"
+    colorScheme="purple"
   >
     <Flex alignItems="center">
       <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
@@ -117,6 +120,7 @@ const Space = ({ criteria, setCriteria }) => (
     isChecked={criteria.space}
     onChange={() => setCriteria({ ...criteria, space: !criteria.space })}
     size="lg"
+    colorScheme="purple"
   >
     <Flex alignItems="center">
       <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
@@ -132,6 +136,7 @@ const Symbols = ({ criteria, setCriteria }) => (
     isChecked={criteria.symbols}
     onChange={() => setCriteria({ ...criteria, symbols: !criteria.symbols })}
     size="lg"
+    colorScheme="purple"
   >
     <Flex alignItems="center">
       <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
@@ -147,6 +152,7 @@ const NonAzChars = ({ criteria, setCriteria }) => (
     isChecked={criteria.non_az}
     onChange={() => setCriteria({ ...criteria, non_az: !criteria.non_az })}
     size="lg"
+    colorScheme="purple"
   >
     <Flex alignItems="center">
       <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
