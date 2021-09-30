@@ -1,7 +1,7 @@
 const all_letters_LC = "abcdefghijklmnopqrstuvwxyz"
 const all_letters_UC = all_letters_LC.toUpperCase()
 const all_numbers = "0123456789"
-const symbols = "!\"#$%&'()*+,-./:;<>=?@[]\\^_{}| ~×`"
+const symbols = "!\"#$%&'()*+,-./:;<>=?@[]\\^_{}|~×`"
 const non_az_letters = "üéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£ØƒáíóúñÑÓßÔÒõÕµþÞÚÛÙýÝ"
 
 const generate_password = criteria => {
