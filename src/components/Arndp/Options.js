@@ -10,6 +10,9 @@ import {
   Tooltip,
 } from "@chakra-ui/react"
 import { RepeatIcon } from "@chakra-ui/icons"
+import { isMobile } from "react-device-detect"
+
+const Tt = p => (isMobile ? p.children : <Tooltip {...p} />)
 
 export const Options = p => (
   <Flex
@@ -21,47 +24,47 @@ export const Options = p => (
     alignItems="center"
   >
     <Box d="flex" alignItems="center">
-      <Tooltip label="Re-generate passwords" hasArrow>
+      <Tt label="Re-generate passwords" hasArrow>
         <Box mr={4}>
           <Regenerate {...p} />
         </Box>
-      </Tooltip>
-      <Tooltip label="Set the password length" hasArrow>
+      </Tt>
+      <Tt label="Set the password length" hasArrow>
         <Box>
           <Length {...p} />
         </Box>
-      </Tooltip>
+      </Tt>
     </Box>
-    <Tooltip label="Include UPPERCASE letters" hasArrow>
+    <Tt label="Include UPPERCASE letters" hasArrow>
       <Box>
         <Uc {...p} />
       </Box>
-    </Tooltip>
-    <Tooltip label="Include lowercase letters" hasArrow>
+    </Tt>
+    <Tt label="Include lowercase letters" hasArrow>
       <Box>
         <Lc {...p} />
       </Box>
-    </Tooltip>
-    <Tooltip label="Include numbers" hasArrow>
+    </Tt>
+    <Tt label="Include numbers" hasArrow>
       <Box>
         <Numbers {...p} />
       </Box>
-    </Tooltip>
-    <Tooltip label="Include white-space in the password" hasArrow>
+    </Tt>
+    <Tt label="Include white-space in the password" hasArrow>
       <Box>
         <Space {...p} />
       </Box>
-    </Tooltip>
-    <Tooltip label="Include symbols" hasArrow>
+    </Tt>
+    <Tt label="Include symbols" hasArrow>
       <Box>
         <Symbols {...p} />
       </Box>
-    </Tooltip>
-    <Tooltip label="Include non A-z characters" hasArrow>
+    </Tt>
+    <Tt label="Include non A-z characters" hasArrow>
       <Box>
         <NonAzChars {...p} />
       </Box>
-    </Tooltip>
+    </Tt>
   </Flex>
 )
 
