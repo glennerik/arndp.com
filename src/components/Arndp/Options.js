@@ -71,10 +71,12 @@ const Uc = ({ criteria, setCriteria }) => (
     onChange={() => setCriteria({ ...criteria, uc: !criteria.uc })}
     size="lg"
   >
-    <Text as="span" d={{ base: "inline", lg: "none" }}>
-      Uppercase{" "}
-    </Text>
-    <Kbd>A-Z</Kbd>
+    <Flex alignItems="center">
+      <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
+        Uppercase
+      </Text>
+      <Kbd>A-Z</Kbd>
+    </Flex>
   </Checkbox>
 )
 
@@ -84,10 +86,12 @@ const Lc = ({ criteria, setCriteria }) => (
     onChange={() => setCriteria({ ...criteria, lc: !criteria.lc })}
     size="lg"
   >
-    <Text as="span" d={{ base: "inline", lg: "none" }}>
-      Lowercase{" "}
-    </Text>
-    <Kbd>a-z</Kbd>
+    <Flex alignItems="center">
+      <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
+        Lowercase
+      </Text>
+      <Kbd>a-z</Kbd>
+    </Flex>
   </Checkbox>
 )
 
@@ -97,10 +101,12 @@ const Numbers = ({ criteria, setCriteria }) => (
     onChange={() => setCriteria({ ...criteria, numbers: !criteria.numbers })}
     size="lg"
   >
-    <Text as="span" d={{ base: "inline", lg: "none" }}>
-      Numbers{" "}
-    </Text>
-    <Kbd>0-9</Kbd>
+    <Flex alignItems="center">
+      <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
+        Numbers
+      </Text>
+      <Kbd>0-9</Kbd>
+    </Flex>
   </Checkbox>
 )
 
@@ -110,7 +116,12 @@ const Space = ({ criteria, setCriteria }) => (
     onChange={() => setCriteria({ ...criteria, space: !criteria.space })}
     size="lg"
   >
-    Space <Kbd>&nbsp;</Kbd>
+    <Flex alignItems="center">
+      <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
+        Space
+      </Text>
+      <Kbd>"&nbsp;"</Kbd>
+    </Flex>
   </Checkbox>
 )
 
@@ -120,10 +131,12 @@ const Symbols = ({ criteria, setCriteria }) => (
     onChange={() => setCriteria({ ...criteria, symbols: !criteria.symbols })}
     size="lg"
   >
-    <Text as="span" d={{ base: "inline", lg: "none" }}>
-      Symbols{" "}
-    </Text>
-    <Kbd>!#$%&hellip;</Kbd>
+    <Flex alignItems="center">
+      <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
+        Symbols
+      </Text>
+      <Kbd>!#$%&hellip;</Kbd>
+    </Flex>
   </Checkbox>
 )
 
@@ -133,10 +146,12 @@ const NonAzChars = ({ criteria, setCriteria }) => (
     onChange={() => setCriteria({ ...criteria, non_az: !criteria.non_az })}
     size="lg"
   >
-    <Text as="span" d={{ base: "inline", lg: "none" }}>
-      Non A-z Chars{" "}
-    </Text>
-    <Kbd>üéâø&hellip;</Kbd>
+    <Flex alignItems="center">
+      <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
+        Non A-z Chars
+      </Text>
+      <Kbd>üéâø&hellip;</Kbd>
+    </Flex>
   </Checkbox>
 )
 
