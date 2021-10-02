@@ -22,7 +22,7 @@ const IndexPage = () => (
         href="https://en.wikipedia.org/wiki/Password_strength"
         textDecor="underline"
       >
-        song password
+        strong password
       </Link>
       . Throw in a couple of spaces and some other characters as well and it is{" "}
       <i>super strong</i>.
