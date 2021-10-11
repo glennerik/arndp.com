@@ -11,10 +11,6 @@ const IndexPage = () => (
     <Arndp />
 
     <Text as="p" my={8}>
-      Click on a password to copy it 😎
-    </Text>
-
-    <Text as="p" my={8}>
       As long as the password you choose is at least 16 characters long. And it
       contains uppercase and lowercase letters, in addition to numbers &mdash;
       it is considered a{" "}
