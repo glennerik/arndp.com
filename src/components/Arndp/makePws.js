@@ -36,10 +36,10 @@ const generate_password = criteria => {
   return pw.join("")
 }
 
-export const makePws = (criteria, setPasswords) => {
+export const makePws = criteria => {
   const pws = []
   Array.from({ length: criteria.numberOfPws }).forEach(() =>
     pws.push(generate_password(criteria))
   )
-  setPasswords(pws)
+  return pws
 }

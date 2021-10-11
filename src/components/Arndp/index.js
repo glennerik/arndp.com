@@ -10,7 +10,7 @@ const Arndp = () => {
   const [passwords, setPasswords] = useState(null)
 
   useEffect(() => {
-    makePws(criteria, setPasswords)
+    setPasswords(makePws(criteria))
   }, [criteria])
 
   return (
