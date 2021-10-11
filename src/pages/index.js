@@ -31,6 +31,31 @@ const IndexPage = () => (
       see these passwords. Guard them as if your life depends on them, it just
       might!
     </Text>
+
+    <Text as="p">
+      Arndp.com is both safe and anonymous. If you don't trust us and want to
+      make sure the generated passwords are not stored anywhere, try
+      disconnecting your device from the internet and regenerate the passwords.
+      <br />
+      <br />
+      You can also disconnect your device from the internet/network and reload
+      this page. The password generator will still work and you can be sure no
+      information is being sent anywhere out from your device.
+      <br />
+      <br />
+      For the super skeptical: Disconnect, regenerate, copy, then close the
+      tab/browser and flush your browsers cache before reconnecting to the
+      network. We don’t want anyones passwords, we want people to use this site
+      and for that to happen it needs to be trustworthy.
+      <br />
+      <br />
+      Still not convinced? Good, I like that, you shoould be careful with your
+      passwords. Check out the source code of arndp.com on{" "}
+      <Link href="https://github.com/glennerik/arndp.com" textDecor="underline">
+        Github
+      </Link>
+      .
+    </Text>
   </Layout>
 )
 
