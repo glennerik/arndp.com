@@ -7,7 +7,7 @@ import { Options } from "./Options"
 
 const Arndp = () => {
   const [criteria, setCriteria] = useState(defaultCriteria)
-  const [passwords, setPasswords] = useState(null)
+  const [passwords, setPasswords] = useState([])
 
   useEffect(() => {
     setPasswords(makePws(criteria))
@@ -17,12 +17,13 @@ const Arndp = () => {
     <>
       <Options criteria={criteria} setCriteria={setCriteria} />
       <Passwords passwords={passwords} />
-      <Text as="p" my={4} d={passwords ? "block" : "none"}>
-        These passwords were generated{" "}
+      <Text my={4} d={passwords.length ? "block" : "none"}>
+        These passwords were generated on{" "}
         <Text as="i" d="inline-block">
           {new Date().toDateString()} @ {new Date().toLocaleTimeString()}
         </Text>
-        <Text as="p" my={8}>
+        .{" "}
+        <Text as="span" d="inline-block">
           Click on a password to copy it 😎
         </Text>
       </Text>
@@ -33,7 +34,7 @@ const Arndp = () => {
 export default Arndp
 
 const Passwords = ({ passwords }) =>
-  passwords !== null ? (
+  passwords.length ? (
     passwords
       .filter(pw => (pw ? pw : null))
       .map((pw, tlr) => <ListPw password={pw} key={tlr} />)
