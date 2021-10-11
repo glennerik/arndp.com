@@ -60,5 +60,4 @@ const defaultCriteria = {
   tlr: 0,
   length: 24,
   numberOfPws: 5,
-  showSpinner: true,
 }
