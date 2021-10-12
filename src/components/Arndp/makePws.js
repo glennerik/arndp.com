@@ -2,7 +2,6 @@ const all_letters_LC = "abcdefghijklmnopqrstuvwxyz"
 const all_letters_UC = all_letters_LC.toUpperCase()
 const all_numbers = "0123456789"
 const symbols = "!\"#$%&'()*+,-./:;<>=?@[]\\^_{}|~×`"
-// const non_az_letters = "üéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£ØƒáíóúñÑÓßÔÒõÕµþÞÚÛÙýÝ"
 const non_az_letters_UC = "ÄÅÉÆÖÜ£ØƒÑÓßÔÒÕÚÛÙÝ"
 const non_az_letters_LC = "üéâäàåçêëèïîìæôöòûùÿøáíóúñõµþÞý"
 
