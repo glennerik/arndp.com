@@ -16,15 +16,15 @@ const Arndp = () => {
   return (
     <>
       <Options criteria={criteria} setCriteria={setCriteria} />
-      <Passwords passwords={passwords} />
+      <Passwords passwords={passwords} hide={criteria.hide} />
       <Text my={4} d={passwords.length ? "block" : "none"}>
-        These passwords were generated on{" "}
-        <Text as="i" d="inline-block">
+        New passwords generated on{" "}
+        <Text as="b" d="inline-block">
           {new Date().toDateString()} @ {new Date().toLocaleTimeString()}
         </Text>
         .{" "}
         <Text as="span" d="inline-block">
-          Click on a password to copy it 😎
+          Click on a password to <i>copy</i> it 😎
         </Text>
       </Text>
     </>
@@ -33,11 +33,11 @@ const Arndp = () => {
 
 export default Arndp
 
-const Passwords = ({ passwords }) =>
+const Passwords = ({ passwords, hide }) =>
   passwords.length ? (
     passwords
       .filter(pw => (pw ? pw : null))
-      .map((pw, tlr) => <ListPw password={pw} key={tlr} />)
+      .map((pw, tlr) => <ListPw password={pw} key={tlr} hide={hide} />)
   ) : (
     <Box my={8} textAlign="center">
       <Text as="noscript" color="red" d="block">
@@ -61,4 +61,5 @@ const defaultCriteria = {
   tlr: 0,
   length: 24,
   numberOfPws: 5,
+  hide: false,
 }

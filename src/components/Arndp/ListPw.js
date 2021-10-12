@@ -4,7 +4,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard"
 import Swal from "sweetalert2"
 import { ScaleFade, Text } from "@chakra-ui/react"
 
-export const ListPw = ({ password }) => {
+export const ListPw = ({ password, hide }) => {
   const [isOpen, setOpen] = useState(false)
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export const ListPw = ({ password }) => {
             fontSize="xl"
             color="white"
           >
-            {password}
+            {hide ? "****************" : password}
           </Text>
         </Text>
       </CopyToClipboard>

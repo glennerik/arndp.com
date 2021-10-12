@@ -64,6 +64,14 @@ export const Options = p => (
         <NonAzChars {...p} />
       </Box>
     </Tt>
+    <Tt
+      label="Don't show the password, but copy them to clipboard when clicked"
+      hasArrow
+    >
+      <Box my="2">
+        <Hide {...p} />
+      </Box>
+    </Tt>
   </Flex>
 )
 
@@ -159,6 +167,22 @@ const NonAzChars = ({ criteria, setCriteria }) => (
         Non A-z Chars
       </Text>
       <Kbd>üéâø&hellip;</Kbd>
+    </Flex>
+  </Checkbox>
+)
+
+const Hide = ({ criteria, setCriteria }) => (
+  <Checkbox
+    isChecked={criteria.hide}
+    onChange={() => setCriteria({ ...criteria, hide: !criteria.hide })}
+    size="lg"
+    colorScheme="purple"
+  >
+    <Flex alignItems="center">
+      <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
+        Hide passwords
+      </Text>
+      <Kbd d={{ base: "none", lg: "inline" }}>Hide</Kbd>
     </Flex>
   </Checkbox>
 )
