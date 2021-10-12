@@ -41,5 +41,5 @@ export const makePws = criteria => {
   Array.from({ length: criteria.numberOfPws }).forEach(() =>
     pws.push(generate_password(criteria))
   )
-  return pws
+  return pws.filter(i => i)
 }

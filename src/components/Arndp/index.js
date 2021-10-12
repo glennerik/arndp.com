@@ -60,6 +60,6 @@ const defaultCriteria = {
   non_az: true,
   tlr: 0,
   length: 24,
-  numberOfPws: 5,
+  numberOfPws: 3,
   hide: false,
 }
