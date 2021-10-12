@@ -34,6 +34,7 @@ export const ListPw = ({ password, hide }) => {
           cursor="copy"
           my={4}
           textAlign="center"
+          p={4}
         >
           <Text
             as="span"
