@@ -9,7 +9,6 @@ const IndexPage = () => (
     <Seo title="A Random Password Generator" />
     <Heading as="h1">A Random Password Generator</Heading>
     <Arndp />
-
     <Stack spacing={4}>
       <Text>
         As long as the password you choose is at least 16 characters long. And
@@ -27,14 +26,14 @@ const IndexPage = () => (
 
       <Text>
         All passwords are generated client side &mdash; aka. on your local
-        device. They are not generated on our server, and they are not
-        transferred over the network. No one but you (or anyone looking at your
-        screen) are able to see these passwords. Guard them as if your life
-        depends on them, it just might!
+        device. They are not generated on a server, and they are not transferred
+        over the network. No one but you (or anyone looking at your screen) are
+        able to see these passwords. Guard them as if your life depends on them,
+        it just might!
       </Text>
 
       <Text>
-        Arndp.com is both safe and anonymous. If you don't trust us and want to
+        Arndp.com is both safe and anonymous. If you don't trust me and want to
         make sure the generated passwords are not stored anywhere, try
         disconnecting your device from the internet and regenerate the
         passwords.
@@ -48,8 +47,9 @@ const IndexPage = () => (
       <Text>
         For the super skeptical: Disconnect, regenerate, copy, then close the
         tab/browser and flush your browsers cache before reconnecting to the
-        network. We don’t want anyones passwords, we want people to use this
-        site and for that to happen it needs to be trustworthy.
+        network. I really don’t want anyones passwords, having them only creates
+        problems ;-) I want people to use this site and for that to happen it
+        needs to be trustworthy.
       </Text>
       <Text>
         Still not convinced? Good, I like that, you shoould be careful with your
