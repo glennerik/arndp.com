@@ -28,7 +28,7 @@ export const ListPw = ({ password, hide }) => {
       >
         <Text
           as="pre"
-          bg="purple.400"
+          bg="purple"
           rounded="md"
           shadow="md"
           cursor="copy"

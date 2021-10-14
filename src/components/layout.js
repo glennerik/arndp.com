@@ -25,7 +25,9 @@ const Layout = ({ children }) => {
     <>
       <Box as="header" bg="purple">
         <Box maxW={960} m="0 auto" p={4}>
-          <Link href="/">{data.site.siteMetadata?.title || `arndp.com`}</Link>
+          <Link href="/" color="white">
+            {data.site.siteMetadata?.title || `arndp.com`}
+          </Link>
         </Box>
       </Box>
       <Box m="0 auto" maxW={960} p={4}>
