@@ -8,7 +8,8 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { Box, Link } from "@chakra-ui/react"
+import { Flex, Box, Link, Button, useColorMode } from "@chakra-ui/react"
+import { SunIcon, MoonIcon } from "@chakra-ui/icons"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -21,14 +22,30 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const { colorMode, toggleColorMode } = useColorMode()
+
   return (
     <>
       <Box as="header" bg="purple">
-        <Box maxW={960} m="0 auto" p={4}>
+        <Flex
+          maxW={960}
+          m="0 auto"
+          p={4}
+          justifyContent="space-between"
+          alignItems="center"
+        >
           <Link href="/" color="white">
             {data.site.siteMetadata?.title || `arndp.com`}
           </Link>
-        </Box>
+          <Button
+            onClick={toggleColorMode}
+            variant="link"
+            color="yellow.200"
+            p={2}
+          >
+            {colorMode === "light" ? <SunIcon /> : <MoonIcon />}
+          </Button>
+        </Flex>
       </Box>
       <Box m="0 auto" maxW={960} p={4}>
         <main>{children}</main>
