@@ -1,0 +1,5 @@
+* Darkmode 
+* Animate regenerate pws
+* Change color each time new pws are generated.
+* Offer to store selected pws securely in localstorage and on server?
+  https://www.npmjs.com/package/secure-ls
