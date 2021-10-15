@@ -32,9 +32,10 @@ export const ListPw = ({ password, hide }) => {
           p={4}
         >
           <Text
-            as="span"
-            fontFamily="mono"
+            as="pre"
             wordBreak="break-all"
+            whiteSpace="pre-wrap"
+            fontFamily="mono"
             d="inline"
             borderWidth={1}
             borderStyle="dotted"
