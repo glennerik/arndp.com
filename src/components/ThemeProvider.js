@@ -1,5 +1,6 @@
 import * as React from "react"
 import { createContext, useReducer, useContext } from "react"
+import { theme } from "@chakra-ui/react"
 
 const allThemeColors = [
   "gray",
@@ -48,5 +49,6 @@ export const ThemeProvider = ({ element }) => (
 
 export const useGetThemeColor = () => {
   const [{ colorScheme }] = useThemectx()
-  return { themeColor: `${colorScheme}.700` }
+  const themeColor = theme["colors"][colorScheme][700]
+  return { themeColor }
 }

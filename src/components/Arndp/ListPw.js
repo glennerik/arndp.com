@@ -18,6 +18,7 @@ export const ListPw = ({ password, hide }) => {
             icon: "success",
             showCloseButton: true,
             confirmButtonText: "Cool",
+            confirmButtonColor: themeColor,
           })
         }
       >
