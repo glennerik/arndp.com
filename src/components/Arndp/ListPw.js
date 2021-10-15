@@ -1,7 +1,7 @@
 import * as React from "react"
 import { CopyToClipboard } from "react-copy-to-clipboard"
 import Swal from "sweetalert2"
-import { ScaleFade, Text } from "@chakra-ui/react"
+import { ScaleFade, Text, Box } from "@chakra-ui/react"
 import { useGetThemeColor } from "../ThemeProvider"
 
 export const ListPw = ({ password, hide }) => {
@@ -22,18 +22,20 @@ export const ListPw = ({ password, hide }) => {
           })
         }
       >
-        <Text
-          as="pre"
+        <Box
           bg={themeColor}
           rounded="md"
           shadow="md"
           cursor="copy"
-          my={4}
           textAlign="center"
+          my={4}
           p={4}
         >
           <Text
             as="span"
+            fontFamily="mono"
+            wordBreak="break-all"
+            d="inline"
             borderWidth={1}
             borderStyle="dotted"
             borderColor="white"
@@ -42,7 +44,7 @@ export const ListPw = ({ password, hide }) => {
           >
             {hide ? "****************" : password}
           </Text>
-        </Text>
+        </Box>
       </CopyToClipboard>
     </ScaleFade>
   )
