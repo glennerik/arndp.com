@@ -3,16 +3,16 @@ import { createContext, useReducer, useContext } from "react"
 import { theme } from "@chakra-ui/react"
 
 const allThemeColors = [
-  "gray",
-  "red",
-  "orange",
-  "yellow",
-  "green",
-  "teal",
-  "blue",
-  "cyan",
   "purple",
+  "teal",
+  "red",
+  "blue",
+  "yellow",
   "pink",
+  "green",
+  "orange",
+  "cyan",
+  "gray",
 ]
 
 const defaultState = {
