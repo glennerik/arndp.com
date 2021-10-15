@@ -4,12 +4,11 @@ import { Flex, Box, Text, Spinner } from "@chakra-ui/react"
 import { makePws } from "./makePws"
 import { ListPw } from "./ListPw"
 import { Options } from "./Options"
-import { useThemectx } from "../ThemeProvider"
+import { useGetThemeColor, useThemectx } from "../ThemeProvider"
 
 const Arndp = () => {
   const [criteria, setCriteria] = useState(defaultCriteria)
   const [passwords, setPasswords] = useState([])
-
   const [, dispatch] = useThemectx()
 
   useEffect(() => {
@@ -49,11 +48,16 @@ const Passwords = ({ passwords, hide }) =>
       </Text>
       <Flex alignItems="center" justifyContent="center" as="i">
         Generating
-        <Spinner mx={4} color="purple" />
+        <ThemeColoredSpinner mx={4} />
         passwords
       </Flex>
     </Box>
   )
+
+const ThemeColoredSpinner = p => {
+  const { themeColor } = useGetThemeColor()
+  return <Spinner {...p} color={themeColor} />
+}
 
 const defaultCriteria = {
   uc: true,
