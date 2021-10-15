@@ -37,8 +37,7 @@ const generate_password = criteria => {
 
 export const makePws = criteria => {
   const pws = []
-  Array.from({ length: criteria.numberOfPws }).forEach(() =>
-    pws.push(generate_password(criteria))
-  )
+  const length = criteria.numberOfPws
+  Array.from({ length }).forEach(() => pws.push(generate_password(criteria)))
   return pws.filter(i => i)
 }

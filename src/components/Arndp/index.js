@@ -40,7 +40,7 @@ const Passwords = ({ passwords, hide }) =>
   passwords.length ? (
     passwords
       .filter(pw => (pw ? pw : null))
-      .map((pw, tlr) => <ListPw password={pw} key={tlr} hide={hide} />)
+      .map(pw => <ListPw password={pw} key={pw} hide={hide} />)
   ) : (
     <Box my={8} textAlign="center">
       <Text as="noscript" color="red" d="block">
