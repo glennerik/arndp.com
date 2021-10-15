@@ -1,3 +1,3 @@
-* Animate regenerate pws
+* Animate re-generate arrows 180deg
 * Offer to store selected pws securely in localstorage and on server?
   https://www.npmjs.com/package/secure-ls
