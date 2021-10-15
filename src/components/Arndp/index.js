@@ -4,14 +4,18 @@ import { Flex, Box, Text, Spinner } from "@chakra-ui/react"
 import { makePws } from "./makePws"
 import { ListPw } from "./ListPw"
 import { Options } from "./Options"
+import { useThemectx } from "../ThemeProvider"
 
 const Arndp = () => {
   const [criteria, setCriteria] = useState(defaultCriteria)
   const [passwords, setPasswords] = useState([])
 
+  const [, dispatch] = useThemectx()
+
   useEffect(() => {
+    dispatch({ type: "nextColor" })
     setPasswords(makePws(criteria))
-  }, [criteria])
+  }, [criteria, dispatch])
 
   return (
     <>

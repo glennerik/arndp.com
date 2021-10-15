@@ -1,7 +1,4 @@
 /**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
@@ -10,6 +7,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { Flex, Box, Link, Button, useColorMode } from "@chakra-ui/react"
 import { SunIcon, MoonIcon } from "@chakra-ui/icons"
+import { useGetThemeColor } from "./ThemeProvider"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -23,10 +21,11 @@ const Layout = ({ children }) => {
   `)
 
   const { colorMode, toggleColorMode } = useColorMode()
+  const { themeColor } = useGetThemeColor()
 
   return (
     <>
-      <Box as="header" bg="purple">
+      <Box as="header" bg={themeColor}>
         <Flex
           maxW={960}
           m="0 auto"

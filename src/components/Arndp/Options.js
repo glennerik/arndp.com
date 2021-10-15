@@ -11,76 +11,81 @@ import {
 } from "@chakra-ui/react"
 import { RepeatIcon } from "@chakra-ui/icons"
 import { isMobile } from "react-device-detect"
+import { useThemectx } from "../ThemeProvider"
 
 const Tt = p => (isMobile ? p.children : <Tooltip {...p} />)
 
-export const Options = p => (
-  <Flex
-    d={{ base: "block", lg: "flex" }}
-    textAlign={{ base: "none", lg: "center" }}
-    whiteSpace="nowrap"
-    justifyContent="space-between"
-    alignItems="center"
-  >
-    <Box d="flex" alignItems="center" my="2">
-      <Tt label="Re-generate passwords" hasArrow>
-        <Box mr={4}>
-          <Regenerate {...p} />
-        </Box>
-      </Tt>
-      <Tt label="Set the password length" hasArrow>
-        <Box>
-          <Length {...p} />
-        </Box>
-      </Tt>
-    </Box>
-    <Tt label="Include UPPERCASE letters" hasArrow>
-      <Box my="2">
-        <Uc {...p} />
-      </Box>
-    </Tt>
-    <Tt label="Include lowercase letters" hasArrow>
-      <Box my="2">
-        <Lc {...p} />
-      </Box>
-    </Tt>
-    <Tt label="Include numbers" hasArrow>
-      <Box my="2">
-        <Numbers {...p} />
-      </Box>
-    </Tt>
-    <Tt label="Include white-space in the password" hasArrow>
-      <Box my="2">
-        <Space {...p} />
-      </Box>
-    </Tt>
-    <Tt label="Include symbols" hasArrow>
-      <Box my="2">
-        <Symbols {...p} />
-      </Box>
-    </Tt>
-    <Tt label="Include non A-z characters" hasArrow>
-      <Box my="2">
-        <NonAzChars {...p} />
-      </Box>
-    </Tt>
-    <Tt
-      label="Don't show the password, but copy them to clipboard when clicked"
-      hasArrow
-    >
-      <Box my="2">
-        <Hide {...p} />
-      </Box>
-    </Tt>
-  </Flex>
-)
+export const Options = p => {
+  const [{ colorScheme }] = useThemectx()
 
-const Uc = ({ criteria, setCriteria }) => (
+  return (
+    <Flex
+      d={{ base: "block", lg: "flex" }}
+      textAlign={{ base: "none", lg: "center" }}
+      whiteSpace="nowrap"
+      justifyContent="space-between"
+      alignItems="center"
+    >
+      <Box d="flex" alignItems="center" my="2">
+        <Tt label="Re-generate passwords" hasArrow>
+          <Box mr={4}>
+            <Regenerate {...p} colorScheme={colorScheme} />
+          </Box>
+        </Tt>
+        <Tt label="Set the password length" hasArrow>
+          <Box>
+            <Length {...p} colorScheme={colorScheme} />
+          </Box>
+        </Tt>
+      </Box>
+      <Tt label="Include UPPERCASE letters" hasArrow>
+        <Box my="2">
+          <Uc {...p} colorScheme={colorScheme} />
+        </Box>
+      </Tt>
+      <Tt label="Include lowercase letters" hasArrow>
+        <Box my="2">
+          <Lc {...p} colorScheme={colorScheme} />
+        </Box>
+      </Tt>
+      <Tt label="Include numbers" hasArrow>
+        <Box my="2">
+          <Numbers {...p} colorScheme={colorScheme} />
+        </Box>
+      </Tt>
+      <Tt label="Include white-space in the password" hasArrow>
+        <Box my="2">
+          <Space {...p} colorScheme={colorScheme} />
+        </Box>
+      </Tt>
+      <Tt label="Include symbols" hasArrow>
+        <Box my="2">
+          <Symbols {...p} colorScheme={colorScheme} />
+        </Box>
+      </Tt>
+      <Tt label="Include non A-z characters" hasArrow>
+        <Box my="2">
+          <NonAzChars {...p} colorScheme={colorScheme} />
+        </Box>
+      </Tt>
+      <Tt
+        label="Don't show the password, but copy them to clipboard when clicked"
+        hasArrow
+      >
+        <Box my="2">
+          <Hide {...p} colorScheme={colorScheme} />
+        </Box>
+      </Tt>
+    </Flex>
+  )
+}
+
+const Uc = ({ criteria, setCriteria, colorScheme }) => (
   <Checkbox
     isChecked={criteria.uc}
     onChange={() => setCriteria({ ...criteria, uc: !criteria.uc })}
     size="lg"
-    colorScheme="purple"
+    colorScheme={colorScheme}
   >
     <Flex alignItems="center">
       <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
@@ -91,12 +96,12 @@ const Uc = ({ criteria, setCriteria }) => (
   </Checkbox>
 )
 
-const Lc = ({ criteria, setCriteria }) => (
+const Lc = ({ criteria, setCriteria, colorScheme }) => (
   <Checkbox
     isChecked={criteria.lc}
     onChange={() => setCriteria({ ...criteria, lc: !criteria.lc })}
     size="lg"
-    colorScheme="purple"
+    colorScheme={colorScheme}
   >
     <Flex alignItems="center">
       <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
@@ -107,12 +112,12 @@ const Lc = ({ criteria, setCriteria }) => (
   </Checkbox>
 )
 
-const Numbers = ({ criteria, setCriteria }) => (
+const Numbers = ({ criteria, setCriteria, colorScheme }) => (
   <Checkbox
     isChecked={criteria.numbers}
     onChange={() => setCriteria({ ...criteria, numbers: !criteria.numbers })}
     size="lg"
-    colorScheme="purple"
+    colorScheme={colorScheme}
   >
     <Flex alignItems="center">
       <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
@@ -123,12 +128,12 @@ const Numbers = ({ criteria, setCriteria }) => (
   </Checkbox>
 )
 
-const Space = ({ criteria, setCriteria }) => (
+const Space = ({ criteria, setCriteria, colorScheme }) => (
   <Checkbox
     isChecked={criteria.space}
     onChange={() => setCriteria({ ...criteria, space: !criteria.space })}
     size="lg"
-    colorScheme="purple"
+    colorScheme={colorScheme}
   >
     <Flex alignItems="center">
       <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
@@ -139,12 +144,12 @@ const Space = ({ criteria, setCriteria }) => (
   </Checkbox>
 )
 
-const Symbols = ({ criteria, setCriteria }) => (
+const Symbols = ({ criteria, setCriteria, colorScheme }) => (
   <Checkbox
     isChecked={criteria.symbols}
     onChange={() => setCriteria({ ...criteria, symbols: !criteria.symbols })}
     size="lg"
-    colorScheme="purple"
+    colorScheme={colorScheme}
   >
     <Flex alignItems="center">
       <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
@@ -155,12 +160,12 @@ const Symbols = ({ criteria, setCriteria }) => (
   </Checkbox>
 )
 
-const NonAzChars = ({ criteria, setCriteria }) => (
+const NonAzChars = ({ criteria, setCriteria, colorScheme }) => (
   <Checkbox
     isChecked={criteria.non_az}
     onChange={() => setCriteria({ ...criteria, non_az: !criteria.non_az })}
     size="lg"
-    colorScheme="purple"
+    colorScheme={colorScheme}
   >
     <Flex alignItems="center">
       <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
@@ -171,12 +176,12 @@ const NonAzChars = ({ criteria, setCriteria }) => (
   </Checkbox>
 )
 
-const Hide = ({ criteria, setCriteria }) => (
+const Hide = ({ criteria, setCriteria, colorScheme }) => (
   <Checkbox
     isChecked={criteria.hide}
     onChange={() => setCriteria({ ...criteria, hide: !criteria.hide })}
     size="lg"
-    colorScheme="purple"
+    colorScheme={colorScheme}
   >
     <Flex alignItems="center">
       <Text as="small" d={{ base: "inline", lg: "none" }} mr={1}>
@@ -187,7 +192,7 @@ const Hide = ({ criteria, setCriteria }) => (
   </Checkbox>
 )
 
-const Length = ({ criteria, setCriteria }) => (
+const Length = ({ criteria, setCriteria, colorScheme }) => (
   <Select
     placeholder="Size"
     size="sm"
@@ -206,9 +211,9 @@ const Length = ({ criteria, setCriteria }) => (
   </Select>
 )
 
-const Regenerate = ({ criteria, setCriteria }) => (
+const Regenerate = ({ criteria, setCriteria, colorScheme }) => (
   <Button
-    colorScheme="purple"
+    colorScheme={colorScheme}
     onClick={() => setCriteria({ ...criteria, tlr: criteria.tlr + 1 })}
   >
     <RepeatIcon />
