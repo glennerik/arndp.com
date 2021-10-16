@@ -1,5 +1,12 @@
 import * as React from "react"
-import { Heading, Text, Link, Stack } from "@chakra-ui/react"
+import {
+  Heading,
+  Text,
+  Link,
+  Stack,
+  ListItem,
+  OrderedList,
+} from "@chakra-ui/react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Arndp from "../components/Arndp"
@@ -40,8 +47,8 @@ const IndexPage = () => (
         For the super skeptical: Disconnect, regenerate, copy, then close the
         tab/browser and flush your browsers cache before reconnecting to the
         network. I really don’t want anyones passwords, having them only creates
-        problems ;-) I want people to use this site and for that to happen it
-        needs to be trustworthy.
+        problems ;-) I want people to use this app; and for that to happen it
+        must be trustworthy.
       </Text>
 
       <Text>
@@ -66,8 +73,17 @@ const IndexPage = () => (
         >
           strong password
         </Link>
-        . Increase the size some more &amp; throw in a couple of spaces and some
-        other characters as well and it will be <i>super strong</i>.
+        .
+      </Text>
+      <Text>
+        If you want to make <i>super strong passwords</i> consider these
+        additional steps:
+        <OrderedList>
+          <ListItem>Increase the size above 16 characters</ListItem>
+          <ListItem>Add some non a-z characters</ListItem>
+          <ListItem>Throw in a couple of spaces</ListItem>
+        </OrderedList>
+        This app makes super strong passwords by default. 💪
       </Text>
     </Stack>
   </Layout>

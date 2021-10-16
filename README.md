@@ -12,5 +12,5 @@
 ### Todo
 
 - Animate re-generate arrows 180deg
-- Offer to store selected pws securely in localstorage and on server with
+- Offer to store selected pws securely in localstorage with
   https://www.npmjs.com/package/secure-ls
