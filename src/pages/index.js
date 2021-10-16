@@ -29,20 +29,17 @@ const IndexPage = () => (
         able to see these passwords. Guard them as if your life depends on them,
         it just might!
       </Text>
-
       <Text>
         Arndp.com is both safe and anonymous. If you don't trust me and want to
         make sure the generated passwords are not stored anywhere, try
         disconnecting your device from the internet and regenerate the
         passwords.
       </Text>
-
       <Text>
         You can also disconnect your device from the internet/network and reload
         this page. The password generator will still work and you can be sure no
         information is being sent anywhere out from your device.
       </Text>
-
       <Text>
         For the super skeptical: Disconnect, regenerate, copy, then close the
         tab/browser and flush your browsers cache before reconnecting to the
@@ -50,7 +47,6 @@ const IndexPage = () => (
         problems ;-) I want people to use this app; and for that to happen it
         must be trustworthy.
       </Text>
-
       <Text>
         Still not convinced? Good, I like that, you shoould be careful with your
         passwords. Check out the source code of arndp.com on{" "}
@@ -62,7 +58,6 @@ const IndexPage = () => (
         </Link>
         .
       </Text>
-
       <Text>
         A general security tip is to keep your passwords at least 16 characters
         long, include UPPERcase and lowercase letters, in addition to numbers.
@@ -75,7 +70,8 @@ const IndexPage = () => (
         </Link>
         .
       </Text>
-      <Text>
+
+      <Text as="div">
         If you want to make <i>super strong passwords</i> consider these
         additional steps:
         <OrderedList>
