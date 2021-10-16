@@ -1,5 +1,5 @@
 import * as React from "react"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { Flex, Box, Text, Spinner } from "@chakra-ui/react"
 import { makePws } from "./makePws"
 import { ListPw } from "./ListPw"
@@ -10,11 +10,19 @@ const Arndp = () => {
   const [criteria, setCriteria] = useState(defaultCriteria)
   const [passwords, setPasswords] = useState([])
   const [, dispatch] = useThemectx()
+  const isInitMount = useRef(true)
 
   useEffect(() => {
-    dispatch({ type: "nextColor" })
     setPasswords(makePws(criteria))
-  }, [criteria, dispatch])
+  }, [criteria])
+
+  useEffect(() => {
+    if (isInitMount.current) {
+      isInitMount.current = false
+    } else {
+      dispatch({ type: "nextColor" })
+    }
+  }, [criteria, isInitMount, dispatch])
 
   return (
     <>
