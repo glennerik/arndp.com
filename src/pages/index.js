@@ -19,7 +19,10 @@ const IndexPage = () => (
     </Heading>
     <Arndp />
     <Heading as="h2" fontSize="3xl" textAlign="center" mb={4}>
-      👉 This app works offline 👈
+      👉 This app{" "}
+      <Text as="span" d="inline-block">
+        works offline 👈
+      </Text>
     </Heading>
     <Stack spacing={4}>
       <Text>
@@ -79,7 +82,11 @@ const IndexPage = () => (
           <ListItem>Add some non a-z characters</ListItem>
           <ListItem>Throw in a couple of spaces</ListItem>
         </OrderedList>
-        This app makes super strong passwords by default. 💪
+        This app makes super strong passwords{" "}
+        <Text as="span" d="inline-block">
+          {" "}
+          by default. 💪
+        </Text>
       </Text>
     </Stack>
   </Layout>

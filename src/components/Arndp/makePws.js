@@ -42,6 +42,6 @@ export const makePws = criteria => {
   const length = criteria.numberOfPws
   Array.from({ length }).forEach(() => pws.push(generate_password(criteria)))
   const noEmptyPws = pws.filter(i => i) // if all options are off
-  const uniqPws = [...new Set(noEmptyPws)] // avoid react list key duplicates
+  const uniqPws = [...new Set(noEmptyPws)] // avoid duplicate passwords (react list keys must also be unique)
   return uniqPws
 }
