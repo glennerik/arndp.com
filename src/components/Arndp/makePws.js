@@ -27,7 +27,7 @@ const generate_password = criteria => {
     }
   }
   const useChars = seed.join("")
-  if (useChars === spaces) return null
+  if (useChars === spaces) return null // dont suggest weak passwords (only spaces)
   const pw = []
   const { length } = criteria
   Array.from({ length }).forEach(() => {
@@ -41,5 +41,7 @@ export const makePws = criteria => {
   const pws = []
   const length = criteria.numberOfPws
   Array.from({ length }).forEach(() => pws.push(generate_password(criteria)))
-  return pws.filter(i => i)
+  const noEmptyPws = pws.filter(i => i) // if all options are off
+  const uniqPws = [...new Set(noEmptyPws)] // avoid react list key duplicates
+  return uniqPws
 }
