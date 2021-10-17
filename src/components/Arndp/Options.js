@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useState, useEffect } from "react"
 import {
   Box,
   Button,
@@ -211,11 +212,21 @@ const Length = ({ criteria, setCriteria, colorScheme }) => (
   </Select>
 )
 
-const Regenerate = ({ criteria, setCriteria, colorScheme }) => (
-  <Button
-    colorScheme={colorScheme}
-    onClick={() => setCriteria({ ...criteria, tlr: criteria.tlr + 1 })}
-  >
-    <RepeatIcon />
-  </Button>
-)
+const Regenerate = ({ criteria, setCriteria, colorScheme }) => {
+  const [rotate, setRotate] = useState(0)
+
+  useEffect(() => {
+    setRotate(rotate + 180)
+  }, [criteria])
+
+  return (
+    <Button
+      colorScheme={colorScheme}
+      onClick={() => setCriteria({ ...criteria, tlr: criteria.tlr + 1 })}
+    >
+      <RepeatIcon
+        style={{ transform: `rotate(-${rotate}deg)`, transition: "0.4s" }}
+      />
+    </Button>
+  )
+}
