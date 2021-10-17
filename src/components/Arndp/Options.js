@@ -216,7 +216,7 @@ const Regenerate = ({ criteria, setCriteria, colorScheme }) => {
   const [rotate, setRotate] = useState(0)
 
   useEffect(() => {
-    setRotate(rotate + 180)
+    setRotate(r => r + 180)
   }, [criteria])
 
   return (
