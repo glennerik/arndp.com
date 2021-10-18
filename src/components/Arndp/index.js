@@ -77,5 +77,5 @@ const defaultCriteria = {
   tlr: 0,
   length: 24,
   numberOfPws: 3,
-  hide: false,
+  hide: true,
 }
