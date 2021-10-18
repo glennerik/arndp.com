@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react"
 import { RepeatIcon } from "@chakra-ui/icons"
 import { isMobile } from "react-device-detect"
-import { useThemectx } from "../ThemeProvider"
+import { useGetThemeColor, useThemectx } from "../ThemeProvider"
 
 const Tt = p => (isMobile ? p.children : <Tooltip {...p} />)
 
@@ -213,6 +213,7 @@ const Length = ({ criteria, setCriteria, colorScheme }) => (
 )
 
 const Regenerate = ({ criteria, setCriteria, colorScheme }) => {
+  const { themeColor } = useGetThemeColor()
   const [rotate, setRotate] = useState(0)
 
   useEffect(() => {
@@ -221,8 +222,10 @@ const Regenerate = ({ criteria, setCriteria, colorScheme }) => {
 
   return (
     <Button
-      colorScheme={colorScheme}
+      bg={themeColor}
+      color="white"
       onClick={() => setCriteria({ ...criteria, tlr: criteria.tlr + 1 })}
+      _hover={{ transform: "scale(1.2)" }}
     >
       <RepeatIcon
         style={{ transform: `rotate(-${rotate}deg)`, transition: "0.4s" }}

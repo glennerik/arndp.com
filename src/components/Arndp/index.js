@@ -35,7 +35,7 @@ const Arndp = () => {
         </Text>
         .{" "}
         <Text as="span" d="inline-block">
-          Click on a password to <i>copy</i> it 😎
+          <i>Click on a password to copy it</i> 😎
         </Text>
       </Text>
     </>
