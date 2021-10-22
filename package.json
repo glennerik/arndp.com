@@ -27,6 +27,7 @@
     "react-device-detect": "^2.0.0",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "rooks": "^5.7.3",
     "sweetalert2": "^11.1.7"
   },
   "devDependencies": {

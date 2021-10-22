@@ -1,13 +1,17 @@
 import * as React from "react"
 import { useEffect, useState, useRef } from "react"
 import { Flex, Box, Text, Spinner } from "@chakra-ui/react"
+import { useLocalstorageState } from "rooks"
 import { makePws } from "./makePws"
 import { ListPw } from "./ListPw"
 import { Options } from "./Options"
 import { useGetThemeColor, useThemectx } from "../ThemeProvider"
 
 const Arndp = () => {
-  const [criteria, setCriteria] = useState(defaultCriteria)
+  const [criteria, setCriteria] = useLocalstorageState(
+    "arndp.com:options",
+    defaultCriteria
+  )
   const [passwords, setPasswords] = useState([])
   const [, dispatch] = useThemectx()
   const isInitMount = useRef(true)
