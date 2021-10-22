@@ -4,6 +4,7 @@ import Swal from "sweetalert2"
 import { ScaleFade, Text, Box, Tooltip } from "@chakra-ui/react"
 import { isMobile } from "react-device-detect"
 import { useGetThemeColor } from "../ThemeProvider"
+import { savePassword } from "./encryptedLs"
 
 const Tt = p => (isMobile ? p.children : <Tooltip {...p} />)
 
@@ -18,11 +19,34 @@ export const ListPw = ({ password, hide }) => {
           onCopy={() =>
             Swal.fire({
               title: "Password Copied",
-              text: "hit ctrl+v or cmd+v to save it somewhere",
+              html: 'Press <i><b>ctrl+v</b></i> or <i><b>cmd+v</b></i> <span style="display:inline-block">to paste it somewhere</span>',
               icon: "success",
               showCloseButton: true,
-              confirmButtonText: "Cool",
+              confirmButtonText: "Save it",
               confirmButtonColor: themeColor,
+              showDenyButton: true,
+              denyButtonText: "Close",
+              denyButtonColor: "gray",
+            }).then(async result => {
+              if (result.isConfirmed) {
+                const { value: name } = await Swal.fire({
+                  title: "Give it a name",
+                  footer:
+                    '<div>Passwords are stored securely in your browser with <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank" style="text-decoration:underline">AES</a> encryption.</div>',
+                  input: "text",
+                  inputLabel: "(you can change this later)",
+                  inputPlaceholder: "Name to remember password usage",
+                  confirmButtonText: "Save",
+                  confirmButtonColor: themeColor,
+                  showDenyButton: true,
+                  denyButtonText: "Close",
+                  denyButtonColor: "gray",
+                })
+
+                if (name) {
+                  savePassword({ name, password })
+                }
+              }
             })
           }
         >
