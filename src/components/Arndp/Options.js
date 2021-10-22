@@ -40,32 +40,32 @@ export const Options = p => {
         </Tt>
       </Box>
       <Tt label="Include UPPERCASE letters" hasArrow>
-        <Box my="2">
+        <Box my="2" ml={{ base: 1, lg: 0 }}>
           <Uc {...p} colorScheme={colorScheme} />
         </Box>
       </Tt>
       <Tt label="Include lowercase letters" hasArrow>
-        <Box my="2">
+        <Box my="2" ml={{ base: 1, lg: 0 }}>
           <Lc {...p} colorScheme={colorScheme} />
         </Box>
       </Tt>
       <Tt label="Include numbers" hasArrow>
-        <Box my="2">
+        <Box my="2" ml={{ base: 1, lg: 0 }}>
           <Numbers {...p} colorScheme={colorScheme} />
         </Box>
       </Tt>
       <Tt label="Include white-space in the password" hasArrow>
-        <Box my="2">
+        <Box my="2" ml={{ base: 1, lg: 0 }}>
           <Space {...p} colorScheme={colorScheme} />
         </Box>
       </Tt>
       <Tt label="Include symbols" hasArrow>
-        <Box my="2">
+        <Box my="2" ml={{ base: 1, lg: 0 }}>
           <Symbols {...p} colorScheme={colorScheme} />
         </Box>
       </Tt>
       <Tt label="Include non A-z characters" hasArrow>
-        <Box my="2">
+        <Box my="2" ml={{ base: 1, lg: 0 }}>
           <NonAzChars {...p} colorScheme={colorScheme} />
         </Box>
       </Tt>
@@ -73,7 +73,7 @@ export const Options = p => {
         label="Don't show the password, but copy them to clipboard when clicked"
         hasArrow
       >
-        <Box my="2">
+        <Box my="2" ml={{ base: 1, lg: 0 }}>
           <Hide {...p} colorScheme={colorScheme} />
         </Box>
       </Tt>
